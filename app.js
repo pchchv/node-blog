@@ -1,10 +1,13 @@
 const express = require('express');
+const morgan = require('morgan');
 
 const app = express();
 
 app.set('view engine', 'ejs');
 
 app.listen(3000);
+
+app.use(morgan('dev'));
 
 app.use((req, res, next) => {
     console.log('new request made: ');
